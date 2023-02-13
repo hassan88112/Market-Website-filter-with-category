@@ -1,0 +1,89 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<!--
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ng-content select=".heading"></ng-content>
+  </div>
+  <div class="panel-body">
+    <ng-content select=".body"></ng-content>
+  </div>
+</div>
+
+  <div style="font-size: 20px"  >
+    <ul >
+      <li  *ngFor="let p of persons">
+        {{p}}
+      </li>
+    </ul>
+  </div>
+
+ <div>
+  <ul *ngFor="let test of peopleByCountry">
+    <li > {{test.country}} </li>
+    <ul>
+      <li *ngFor="let person of test.names"> {{person.name}} </li>
+    </ul>
+  </ul>
+ </div> -->
+
+<br>
+<div *ngIf="cources.length > 0 ; then courseList else noCourses "></div>
+
+<button (click)="onAdd()">Add Course</button>
+
+<ng-template #courseList>
+  <ul>
+    <li *ngFor="let c of cources ;trackBy:onTrack">    <!--  method track by to unchange or reload course again -->
+      <button (click)="onRemove(c)" >Remove Course</button>
+      {{c.courseName}}
+    </li>
+  </ul>
+</ng-template>
+<ng-template #noCourses>
+      No Cources yet .......
+</ng-template>
+
+<br><br>
+
+<div style="font-size: 25px">
+  <ul class="nav nav-pills">
+    <li [class.active]="defaultView === 'students'">
+      <a (click)="setVeiw('students')">Students</a>
+    </li>
+    <li [class.active]="defaultView === 'teachers'">
+      <a (click)="setVeiw('teachers')">Teachers</a>
+    </li>
+  </ul>
+</div>
+<br>
+
+
+<div [ngSwitch]="defaultView" style="font-size: 20px" >
+  <div *ngSwitchCase="'students'">List of Students</div>
+  <div *ngSwitchCase="'teachers'">List of teachers</div>
+</div>
+
+
+<br>
+<div>
+  <button  [ngStyle]="{
+         'background-color' : whatcolor ? 'yellow' : 'red' ,
+         'font-size.px':30
+                   }">
+    click me
+  </button>
+</div>
+
+
+<br>
+<input type="text" appInputFormat>
+
+
+
+
+
+

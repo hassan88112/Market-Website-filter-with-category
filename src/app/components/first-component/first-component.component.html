@@ -1,0 +1,38 @@
+<!--
+<h1> course : {{courseName}}</h1>
+<h2   [textContent]="courseName" ></h2>
+
+<img src="{{imageurl}}" width="220">
+
+<div (click)="divClicked()"><button (click)="methodName($event)"> save </button></div>
+
+<input (keyup.enter)="filterOnKey($event)" type="text">
+
+<input #firstname (keyup.enter)="inputText(firstname.value)" type="text">
+<div>
+  {{nameVla}}
+</div>
+
+  <input [(ngModel)]="employeeName" (keyup)="boxTest(employeeName)" type="text" >
+
+<div>
+  {{employeeName}}
+</div>
+
+  <br><br>
+
+  <span
+    class="glyphicon"
+  [class.glyphicon-heart] ="isFavourite"
+  [class.glyphicon-heart-empty] ="!isFavourite"
+    (click)="onFavouriteClick()" >
+  </span>
+
+  <br><br>
+    <div style="color: blue">
+      {{employees.fullName  | uppercase }}<br>
+      {{employees.salary  | currency:'usd' :true }}
+    </div>
+
+
+-->

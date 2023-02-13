@@ -1,0 +1,30 @@
+<div class="class mt-5">
+  <div class="my-2">
+    <label class="my-1 w-25">Categories</label>
+    <select class="form-control" (change)="filterCategory($event)" >
+      <option value="all"   selected>All</option>
+      <option value="{{option}}" *ngFor="let option of Categories ">{{option}}</option>
+    </select>
+    <div>
+    <app-spanner></app-spanner>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-12" *ngFor="let product of products">
+      <div class="item">
+        <img src="{{product.image}}" alt="">
+        <div class="body">
+          <h5>{{product.id}}</h5>
+          <h4>{{product.title}}</h4>
+          <p>{{product.description}}</p>
+        </div>
+
+        <div class="px-3 mb-2 d-flex justify-content-between align-datas-center ">
+          <button class="btn btn-success" >Add To Cart</button>
+          <span>{{product.price}} L.E</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
