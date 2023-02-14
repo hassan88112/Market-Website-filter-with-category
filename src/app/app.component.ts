@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-App';
+  loading: Boolean=false;
 
 }

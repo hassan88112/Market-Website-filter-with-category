@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import {ProductsModule} from "../products/products.module";
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
-import { SpannerComponent } from './components/spanner/spanner.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+
+
+
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SpannerComponent,
+    SpinnerComponent,
+
+
 
 
 
@@ -20,11 +24,12 @@ import { SpannerComponent } from './components/spanner/spanner.component';
     RouterModule,
     HttpClientModule,
 
-
   ],
-  exports :[
+  exports: [
     HeaderComponent,
-    SpannerComponent
+    SpinnerComponent
+
+
   ]
 })
 export class SharedModule { }
